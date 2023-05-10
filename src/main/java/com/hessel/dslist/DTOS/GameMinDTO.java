@@ -1,6 +1,7 @@
 package com.hessel.dslist.DTOS;
 
 import com.hessel.dslist.entities.Game;
+import com.hessel.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -12,6 +13,14 @@ public class GameMinDTO {
 	
 	public GameMinDTO() {}
 	public GameMinDTO(Game game) {
+		id = game.getId();
+		title = game.getTitle();
+		year = game.getYear();
+		imgUrl = game.getImgUrl();
+		shortDescription = game.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection game) {
 		id = game.getId();
 		title = game.getTitle();
 		year = game.getYear();
