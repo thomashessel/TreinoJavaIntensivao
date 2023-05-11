@@ -11,7 +11,7 @@ import com.hessel.dslist.projections.GameMinProjection;
 public interface GameRepository extends JpaRepository<Game, Long>{
 
 	@Query(nativeQuery = true, value = """
-			SELECT ths_game.id, ths_game.title, ths_game.game_year AS 'year', ths_game.img_url AS imgUrl,
+			SELECT ths_game.id, ths_game.title, ths_game.game_year AS years, ths_game.img_url AS imgUrl,
 			ths_game.short_description AS shortDescription, ths_belonging.position
 			FROM ths_game
 			INNER JOIN ths_belonging ON ths_game.id = ths_belonging.game_id
